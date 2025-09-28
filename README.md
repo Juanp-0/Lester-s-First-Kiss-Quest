@@ -1,4 +1,4 @@
-# Lester's First Kiss Quest: Enhanced
+# Lester's First Kiss Quest
 
 Lester's First Kiss Quest es un juego de Terminal donde Lester, un chico de 19 años que le prometió
 a sus amigos que daría su primer beso antes de cumplir 20 años, el problema es que esta a 50 dias de
