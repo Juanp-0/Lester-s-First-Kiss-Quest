@@ -597,7 +597,7 @@ def game():
                 lester.trabajar()
             case "2":
                 if hablar_uso == False:
-                    lester.hablar()
+                    lester.hablar(dax_chance)
                     hablar_uso = True
                 elif hablar_uso == True and dax_chance[0] == True:
                     print("\nParece ser que ya has hablado con Dax\n")
