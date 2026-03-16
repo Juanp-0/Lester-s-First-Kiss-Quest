@@ -17,6 +17,7 @@ dax_chance = [True, False]
 
 #Verificadores
 hablar_uso = False
+dax_disponible = True  
 tener_ligue = False
 hablar_ligue_uso = False
 primer_beso = False
@@ -27,10 +28,11 @@ tienda = Tienda([EnergItem("Bebida Energetíca", 20, 20), EnergItem("Café Enbot
 
 #Sistema de Guardado
 def newgame():
-    global dias, hablar_uso, hablar_ligue_uso, fin_juego, lester, ligue, tener_ligue, primer_beso
+    global dias, hablar_uso, hablar_ligue_uso, fin_juego, lester, ligue, tener_ligue, primer_beso, dax_disponible
     # Inicializar variables globales
     dias = 1
     hablar_uso = False
+    dax_disponible = True
     hablar_ligue_uso = False
     fin_juego = False
     tener_ligue = False
@@ -47,6 +49,7 @@ def newgame():
         "dinero": lester.dinero,
         "nv_carisma": lester.nv_carisma,
         "hablar_uso": False,
+        "dax_disponible": True,
         "tener_ligue": False,
         "primer_beso": False,
         "nom_ligue": ligue.nombre,
@@ -59,13 +62,14 @@ def newgame():
         json.dump(save_data, new_game)
 
 def load():
-    global dias, hablar_uso, tener_ligue, primer_beso, hablar_ligue_uso, fin_juego, lester, ligue
+    global dias, hablar_uso, tener_ligue, primer_beso, hablar_ligue_uso, fin_juego, lester, ligue, dax_disponible
     try:
         with open("lester_sav.json", "r") as load_game:
             save_data = json.load(load_game)
             # Restaurar variables globales
             dias = save_data["dias"]
             hablar_uso = save_data["hablar_uso"]
+            dax_disponible = save_data.get("dax_disponible", True)  # Compatible con guardos antiguos
             tener_ligue = save_data["tener_ligue"]
             primer_beso = save_data["primer_beso"]
             hablar_ligue_uso = save_data["hablar_ligue_uso"]
@@ -88,6 +92,7 @@ def save():
         "dinero": lester.dinero,
         "nv_carisma": lester.nv_carisma,
         "hablar_uso": hablar_uso,
+        "dax_disponible": dax_disponible,
         "tener_ligue": tener_ligue,
         "primer_beso": primer_beso,
         "nom_ligue": ligue.nombre,
@@ -103,7 +108,7 @@ def save():
 
 #Hub
 def game():
-    global dias,hablar_uso,dax_chance,ligue,hablar_ligue_uso,fin_juego, lester, ligue
+    global dias,hablar_uso,dax_chance,ligue,hablar_ligue_uso,fin_juego, lester, ligue, dax_disponible
     while True:
         print(f"Día {dias}")
         print(f"Stats:\nEnergia: {lester.energia}\nDinero: ${lester.dinero}\nNv. de Carisma: {lester.nv_carisma}")
@@ -113,20 +118,12 @@ def game():
             case "1":
                 lester.trabajar()
             case "2":
-                if hablar_uso == False:
-                    lester.hablar(dax_chance)
-                    hablar_uso = True
-                elif hablar_uso == True and dax_chance[0] == True:
-                    print("\nParece ser que ya has hablado con Dax\n")
-                elif hablar_uso == True and dax_chance[0] == False:
-                    print("\nParece ser que Dax no esta disponible\n")
-                elif hablar_uso == True or hablar_uso == False and lester.nv_carisma == 10:
-                    print("\nHas llegado al maximo nivel de carisma\n")
+                hablar_uso, dax_disponible = lester.hablar(dax_chance, hablar_uso, dax_disponible)
             case "3":
                 if not tener_ligue:
                     lester.salir(primer_beso)
                 else:
-                    print(f"\nMejor trata de salir con {nom_ligue}\n")
+                    print(f"\nMejor trata de salir con {ligue.nombre}\n")
             case "4":
                 sleep(1)
                 print("\nCajero: Bienvenido ¿En que te puedo servir?")
@@ -138,6 +135,8 @@ def game():
                     ligue.ligueMenu(lester)
             case "6": 
                 dias = lester.dormir(dias)
+                hablar_uso = False
+                dax_disponible = True
                 if dias == 50 and lester.dinero < 2000:
                     escenas.bad_ending()
                     print("\nNo tienes el dinero suficiente para ejecutar el Plan De Lester, Perdiste el Juego\n")

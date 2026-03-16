@@ -33,16 +33,30 @@ class Personaje:
         hablar_ligue_uso = False
         return dias
     
-    def hablar(self, dax_chance):
-        global hablar_uso
-        if choice(dax_chance):
-            sleep(1)
-            self.nv_carisma += 1
-            print("\nDax te da unos buenos consejos para aumentar tu carisma\n")
-            sleep(1)
-        else:
-            sleep(1)
-            print ("\nParece ser que Dax no esta disponible\n")
+    def hablar(self, dax_chance, hablar_uso, dax_disponible):
+        if self.nv_carisma >= 10:
+            print("\nHas llegado al maximo nivel de carisma\n")
+        elif hablar_uso == False:
+            resultado = choice(dax_chance)
+            if resultado:
+                sleep(1)
+                self.nv_carisma += 1
+                print("\nDax te da unos buenos consejos para aumentar tu carisma\n")
+                sleep(1)
+                dax_disponible = True
+            else:
+                sleep(1)
+                print("\nParece ser que Dax no esta disponible\n")
+                sleep(1)
+                dax_disponible = False
+            hablar_uso = True
+        elif hablar_uso == True:
+            if dax_disponible:
+                print("\nParece ser que ya has hablado con Dax\n")
+            else:
+                print("\nParece ser que Dax no esta disponible\n")
+        
+        return hablar_uso, dax_disponible
     
     def salir(self, primer_beso):
         if self.energia >= 30 and self.dinero >= 20:
