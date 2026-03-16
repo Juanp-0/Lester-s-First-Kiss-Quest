@@ -1,10 +1,5 @@
 from time import sleep
-from personaje import Personaje
 
-primo_beso = False
-fin_juego = False
-nom_ligue = "null"
-lester = None  # Se inicializa desde el main
 
 def intro():
     print("\nEsta es una historia de cuatro amigos, Lester, Dax, Hugh y Zohan\n")
@@ -141,7 +136,7 @@ def bad_ending():
     print("Zohan: ¡PUTA MADRE LESTER!\n")
     fin_juego = True
 
-def norm_ending():
+def norm_ending(personaje):
     global primer_beso, fin_juego
     sleep(1)
     print("\n                        Unos Meses Despues                   \n")
@@ -229,7 +224,7 @@ def norm_ending():
     print("\nEstas demasiado nervioso porque se esta tardando en responder\n")
     sleep(1)
     print("Cosplayer de Chica Anime: Va ¿Porqué no?")
-    lester.resDinero(2000)
+    personaje.resDinero(2000)
     primer_beso = True
     sleep(1)
     print("Zohan: Lo logró, ese bastardo lo logró")
@@ -243,14 +238,14 @@ def norm_ending():
     print("Lester: ¡CHICOS! ¡LO LOGRE!\n")
     fin_juego = True
 
-def novia_escena():
-    global nom_ligue,primer_beso
+def novia_escena(ligue):
+    global primer_beso
     sleep(1)
     print("\n               En ese mismo momento                   \n")
     sleep(1)
-    print(f"Lester: Oye {nom_ligue}")
+    print(f"Lester: Oye {ligue.nombre}")
     sleep(1)
-    print(f"{nom_ligue}: Dime ¿Qué Ocurre?")
+    print(f"{ligue.nombre}: Dime ¿Qué Ocurre?")
     sleep(1)
     print("Lester: Es que, bueno, tu sabes")
     sleep(1)
@@ -264,25 +259,25 @@ def novia_escena():
     sleep(1)
     print("\nEstas congelado, tienes miedo, la incertidumbre te provoca inquietud\n")
     sleep(1)
-    print(f"{nom_ligue}: Lester ¿Qué Pasa?")
+    print(f"{ligue.nombre}: Lester ¿Qué Pasa?")
     sleep(1)
-    print(f"\nEscuchar la voz de {nom_ligue}, viendo su preocupación, te hace despertar\n")
+    print(f"\nEscuchar la voz de {ligue.nombre}, viendo su preocupación, te hace despertar\n")
     sleep(1)
-    print(f"Lester: {nom_ligue}")
+    print(f"Lester: {ligue.nombre}")
     sleep(1)
     print("Lester: ¿Quisieras ser mi novia?")
     sleep(1)
-    print(f"{nom_ligue}: ...")
+    print(f"{ligue.nombre}: ...")
     sleep(5)
     print("\nEstas demasiado nervioso porque se esta tardando en responder\n")
     sleep(1)
-    print(f"{nom_ligue}: Si")    
+    print(f"{ligue.nombre}: Si")    
     sleep(1)
-    print(f"{nom_ligue}: Si quiero ser tu novia")   
+    print(f"{ligue.nombre}: Si quiero ser tu novia")   
     sleep(1)
     print("\nNo lo puedes creer, lo lograste, quisieras que tus amigos estuvieran aqui para verlo \n")
     sleep(1)
-    print(f"\nVes lentamente como {nom_ligue} se avalanza sobre ti\n")
+    print(f"\nVes lentamente como {ligue.nombre} se avalanza sobre ti\n")
     sleep(1)
     print("\nY\n")
     primer_beso = True
@@ -294,18 +289,18 @@ def novia_escena():
     print("Lester: (Lo Logré)\n")
     sleep(1)
 
-def good_ending():
-    global fin_juego,nom_ligue
+def good_ending(ligue):
+    global fin_juego
     sleep(1)
     print("\n                        Un Año Despues                   \n")
     sleep(1)
-    print(f"\nEstas apunto de celebrar el primer aniversario que estas junto a {nom_ligue}\n")
+    print(f"\nEstas apunto de celebrar el primer aniversario que estas junto a {ligue.nombre}\n")
     sleep(1)
-    print(f"{nom_ligue}: ¿Ya estas listo amor?")
+    print(f"{ligue.nombre}: ¿Ya estas listo amor?")
     sleep(1)
     print("Lester: Si ¿y tú?")
     sleep(1)
-    print(f"{nom_ligue}: Aun me falta maquillarme, esperame")
+    print(f"{ligue.nombre}: Aun me falta maquillarme, esperame")
     sleep(1)
     print("Lester: Okey")
     sleep(1)
@@ -313,7 +308,7 @@ def good_ending():
     sleep(1)
     print("Abres chat grupal que tienes con tus amigos\n")
     sleep(1)
-    print(f"Lester: Bueno Chicos, hoy cumplo un año que estoy con {nom_ligue} y la verdad les quiero agradecer")
+    print(f"Lester: Bueno Chicos, hoy cumplo un año que estoy con {ligue.nombre} y la verdad les quiero agradecer")
     sleep(1)
     print("Lester: Primero, Gracias Zohan, porque si no me hubieras puesto este absurdo reto")
     sleep(1)
@@ -335,7 +330,7 @@ def good_ending():
     sleep(1)
     print("Lester: Bueno, ya me voy, gracias por todo chicos")
     sleep(1)
-    print(f"\nTe desconectas para salir con {nom_ligue}\n")
+    print(f"\nTe desconectas para salir con {ligue.nombre}\n")
     sleep(1)
     print("Zohan: Bro, realmente hicimos crecer a Lester")
     sleep(1)

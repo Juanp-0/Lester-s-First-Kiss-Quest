@@ -12,7 +12,7 @@ class EnergItem(Item):
         self.energia_restaurada = energia_restaurada
 
     def usar(self, personaje):
-        personaje.energia += self.energia_restaurada
+        personaje.sumEnergia(self.energia_restaurada)
 
 class CarismaItem(Item):
     def __init__(self, nombre, precio, carisma_aumentada):

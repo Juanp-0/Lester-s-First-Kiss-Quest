@@ -95,14 +95,14 @@ class Ligue(Personaje):
                         if aprobacion == "Like":
                             self.estado_relacion_xp += 1
                             if self.estado_relacion_xp >= 20:
-                                novia_escena()
+                                novia_escena(self)
                             else:
                                 print(f"\nParece ser que {self.nombre} ha disfrutado la cita\n")
                         
                         elif aprobacion == "Excelente":
                             self.estado_relacion_xp += 3
                             if self.estado_relacion_xp >= 20:
-                                novia_escena()
+                                novia_escena(self)
                             else:
                                 print(f"\nParece ser que {self.nombre} ha disfrutado muchísimo la cita\n")
                         
@@ -110,7 +110,9 @@ class Ligue(Personaje):
                             self.estado_relacion_xp -= 1
                             if self.estado_relacion_xp == 0:
                                 self.tener_ligue = False
+                                personaje.nv_carisma -= 2
                                 print("\nHiciste que tu ligue perdiera todo interés en ti\n")
+                                
                             else:
                                 print(f"\nParece ser que {self.nombre} no ha disfrutado la cita\n")
                         

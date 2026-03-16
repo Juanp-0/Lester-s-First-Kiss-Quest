@@ -6,8 +6,14 @@ class Personaje:
         self.energia = energia
         self.dinero = dinero
         self.nv_carisma = nv_carisma
+
     
     #Acciones
+    def sumEnergia(self, cantidad):
+        if self.energia + cantidad > 100:
+            self.energia = 100
+        self.energia += cantidad
+
     def trabajar(self):
         if self.energia >= 50:
             self.energia -= 50
@@ -18,13 +24,14 @@ class Personaje:
         else:
             print ("\nNo tienes ganas de ir a Trabajar\n")
     
-    def dormir(self):
-        global dias, hablar_ligue_uso, hablar_uso
+    def dormir(self, dias):
+        global hablar_ligue_uso, hablar_uso
         sleep(1)
         dias += 1
         self.energia = 100
         hablar_uso = False
         hablar_ligue_uso = False
+        return dias
     
     def hablar(self, dax_chance):
         global hablar_uso
@@ -37,15 +44,16 @@ class Personaje:
             sleep(1)
             print ("\nParece ser que Dax no esta disponible\n")
     
-    def salir(self):
-        global primer_beso
+    def salir(self, primer_beso):
         if self.energia >= 30 and self.dinero >= 20:
-            self.resEnergia(30)
-            self.resDinero(20)
+            from fiesta import chicas
+            self.energia -= 30
+            self.dinero -= 20
+            sleep(1)
             print("\nTe escapas a escondidas de tu casa\nTomas el metro para llegar al centro de la ciudad\nEntras a la primera discoteca que ves\n")
             sleep(1)
             print("La estas pasando excelente\nParece que se acercan unas chicas interesadas en ti\nEs hora de usar tus habilidades de carisma\n")
-            #chicas()
+            chicas(self)
             if primer_beso == True:
                 sleep(1)
                 self.dormir()
