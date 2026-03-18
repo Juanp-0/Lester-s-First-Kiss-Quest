@@ -1,0 +1,26 @@
+{
+  "intro": {
+    "preludio": [
+      {"texto": "Esta es una historia de cuatro amigos, Lester, Dax, Hugh y Zohan"},
+      {"texto": "Son cuatro chicos de 19 años, quienes se conocen desde la secundaria"},
+      {"texto": "En la noche de año nuevo, Zohan se acordó de algo que le dijo Lester"},
+      {"texto": "Una promesa, que tiene que cumplir en el presente año"},
+      {"texto": "Por lo que rapidamente, Zohan toma su celular y decide hablar en el chat grupal de los amigos"},
+      {"separador": " 1 de Enero de 2015 - 12:30 am - Chat Grupal"}
+    ],
+    "chat_grupal": [
+      {"personaje": "Zohan", "texto": "@todos"},
+      {"personaje": "Zohan", "texto": "Tengo un anuncio importante que dar"},
+      {"personaje": "Dax", "texto": "¿Que Paso?"},
+      {"personaje": "Dax", "texto": "Me estaba durmiendo"},
+      {"personaje": "Zohan", "texto": "Me acordé de algo de suma importancia"},
+      {"personaje": "Zohan", "texto": "Es que no se si hacerlo más al rato"},
+      {"personaje": "Zohan", "texto": "Porque necesito especialmente a Lester disponible"},
+      {"personaje": "Lester", "texto": "Aqui estoy"},
+      {"personaje": "Lester", "texto": "Dilo de una vez"},
+      {"personaje": "Zohan", "texto": "Okey"},
+      {"personaje": "Zohan", "texto": "@todos"},
+      {"personaje": "Zohan", "texto": "Primero que nada"}
+        ]
+    }
+}
