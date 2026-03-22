@@ -1,4 +1,3 @@
-from time import sleep
 from random import choice
 
 class Personaje:
@@ -18,15 +17,12 @@ class Personaje:
         if self.energia >= 50:
             self.energia -= 50
             self.dinero += 50
-            sleep(1)
             print("\nRegresas a Casa, despues de un arduo día de trabajo\n")
-            sleep(1)
         else:
             print ("\nNo tienes ganas de ir a Trabajar\n")
     
     def dormir(self, dias):
         global hablar_ligue_uso, hablar_uso
-        sleep(1)
         dias += 1
         self.energia = 100
         hablar_uso = False
@@ -63,22 +59,17 @@ class Personaje:
             from fiesta import chicas
             self.energia -= 30
             self.dinero -= 20
-            sleep(1)
             print("\nTe escapas a escondidas de tu casa\nTomas el metro para llegar al centro de la ciudad\nEntras a la primera discoteca que ves\n")
-            sleep(1)
             print("La estas pasando excelente\nParece que se acercan unas chicas interesadas en ti\nEs hora de usar tus habilidades de carisma\n")
             chicas(self)
             if primer_beso == True:
-                sleep(1)
                 self.dormir()
         elif self.dinero < 20:
             print("\nNo tienes dinero para Salir de fiesta\n")
         elif self.energia < 30:
             print("\nNo tienes ganas de Salir de fiesta\n")
         else:
-            sleep(1)
             print("Regresas a Casa de manera silenciosa, despues de una noche de locura\n")
-            sleep(1)
 
 
 

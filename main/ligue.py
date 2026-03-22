@@ -1,5 +1,4 @@
 from random import choice
-from escenas import novia_escena
 from personaje import Personaje
 
 class Ligue(Personaje):

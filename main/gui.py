@@ -21,8 +21,10 @@ timer_id = [None]    # ID del after() en curso, para poder cancelarlo
 
 # ─── Función para cambiar de frame ────────────────────────────────────────────
 def mostrar(frame):
-    for f in (frame_menu, frame_escenas):
+    for f in (frame_menu, frame_escenas, frame_hub):
         f.pack_forget()
+    if frame == frame_hub:
+        actualizar_gui()
     frame.pack(fill="both", expand=True)
 
 # ─── Función principal: cargar y reproducir una escena ────────────────────────
@@ -44,10 +46,10 @@ def mostrar_siguiente():
     cancelar_timer()
 
     if indice[0] >= len(escena_actual):
-        # Escena terminada → mostrar botón volver
-        msg_texto.config(text="[ Fin de la escena ]")
+        # Escena terminada → pasar a Hub automáticamente
+        msg_texto.config(text="")
         msg_personaje.config(text="")
-        btn_volver.pack(pady=10)
+        mostrar(frame_hub)
         return
 
     entrada = escena_actual[indice[0]]
@@ -80,7 +82,12 @@ tk.Label(
 
 tk.Button(
     frame_menu, text="Nuevo Juego",
-    command=lambda: [iniciar_escena("intro"), main.newgame()]
+    command=lambda: [main.newgame(), iniciar_escena("intro")]
+).pack(pady=5)
+
+tk.Button(
+    frame_menu, text="Cargar Partida",
+    command=lambda: [main.load(), mostrar(frame_hub)]
 ).pack(pady=5)
 
 tk.Button(
@@ -88,7 +95,71 @@ tk.Button(
     command=app.quit,
 ).pack(pady=5)
 
-frame_menu.pack(fill="both", expand=True)
+# ─── Pantalla HUB ─────────────────────────────────────────────────────────────
+frame_hub = tk.Frame(app)
+
+def actualizar_gui():
+    lbl_dia.config(text=f"Día {main.dias}")
+    lbl_energia.config(text=f"Energia: {main.lester.energia}")
+    lbl_dinero.config(text=f"Dinero: ${main.lester.dinero}")
+    lbl_carisma.config(text=f"Nv. de Carisma: {main.lester.nv_carisma}")
+
+lbl_dia = tk.Label(frame_hub, justify="left")
+lbl_dia.pack(pady=(10, 15))
+
+lbl_energia = tk.Label(frame_hub, justify="left")
+lbl_energia.pack(pady=(10, 15))
+
+lbl_dinero = tk.Label(frame_hub, justify="left")
+lbl_dinero.pack(pady=(10, 15))
+
+lbl_carisma = tk.Label(frame_hub, justify="left")
+lbl_carisma.pack(pady=(10, 15))
+
+btn_trabajar = tk.Button(
+    frame_hub,
+    text="Trabajar",
+    command=lambda: [main.lester.trabajar(), actualizar_gui()],
+    pady=5
+)
+btn_trabajar.pack(pady=10)
+
+def accion_dormir():
+    main.dias = main.lester.dormir(main.dias)
+    main.hablar_uso = False
+    main.dax_disponible = True
+    
+    if main.dias == 50 and main.lester.dinero < 2000:
+        main.save()
+    elif main.dias == 50 and main.lester.dinero >= 2000:
+        main.save()
+    elif main.primer_beso == True:
+        main.save()
+    actualizar_gui()
+
+btn_dormir = tk.Button(
+    frame_hub,
+    text="Dormir",
+    command=accion_dormir,
+    pady=5
+)
+btn_dormir.pack(pady=10)
+
+btn_guardar = tk.Button(
+    frame_hub,
+    text="Guardar",
+    command=lambda: main.save(),
+    pady=5
+)
+btn_guardar.pack(pady=10)
+
+btn_volver = tk.Button(
+    frame_hub,
+    text="Volver al Menú",
+    command=lambda: mostrar(frame_menu),
+    pady=5
+)
+btn_volver.pack(pady=10)
 
 # ─── Pantalla Escenas ──────────────────────────────────────────────────────────
 frame_escenas = tk.Frame(app)
@@ -114,14 +185,7 @@ def actualizar_wraplength(event):
     msg_texto.config(wraplength=event.width - 40)
 frame_escenas.bind("<Configure>", actualizar_wraplength)
 
-
-btn_volver = tk.Button(
-    frame_escenas,
-    text="← Volver al Menú",
-    command=lambda: [cancelar_timer(), mostrar(frame_menu)],
-    pady=5, width=15
-)
-# btn_volver se muestra sólo al terminar la escena
-
 # ─── Arrancar ──────────────────────────────────────────────────────────────────
-app.mainloop()
+if __name__ == "__main__":
+    mostrar(frame_menu)
+    app.mainloop()

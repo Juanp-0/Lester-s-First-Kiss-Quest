@@ -3,7 +3,6 @@
 import json
 from time import sleep
 from personaje import Personaje
-import escenas
 from ligue import Ligue
 from item import Item, EnergItem, CarismaItem
 from tienda import Tienda
@@ -24,7 +23,8 @@ primer_beso = False
 fin_juego = False
 
 tienda = Tienda([EnergItem("Bebida Energetíca", 20, 20), EnergItem("Café Enbotellado", 15, 10), CarismaItem("Perfume", 150, 1)])
-
+lester = Personaje(100, 0, 0)
+ligue = Ligue(None, 0, 0)
 
 #Sistema de Guardado
 def newgame():
@@ -38,9 +38,6 @@ def newgame():
     tener_ligue = False
     primer_beso = False
     
-    # Crear nuevo personaje con stats iniciales
-    lester = Personaje(100, 0, 0)
-    ligue = Ligue(None, 0, 0)
 
     # Guardar estado inicial
     save_data = {
@@ -138,18 +135,15 @@ def game():
                 hablar_uso = False
                 dax_disponible = True
                 if dias == 50 and lester.dinero < 2000:
-                    escenas.bad_ending()
                     print("\nNo tienes el dinero suficiente para ejecutar el Plan De Lester, Perdiste el Juego\n")
                     save()
                     break
                 elif dias == 50 and lester.dinero >= 2000:
                     print("\nNo diste tu primer beso, tendras que ejecutar el Plan De Lester")
                     sleep(1)
-                    escenas.norm_ending()
                     save()
                     break 
                 elif primer_beso == True:
-                    escenas.good_ending()
                     save()
                     break 
             case "7":
