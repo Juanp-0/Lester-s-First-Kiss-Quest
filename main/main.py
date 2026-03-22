@@ -161,28 +161,5 @@ def game():
                 print("Selecciona una opción valida\n")
 
 #Menu
-while True:
-    print("Lester's First Kiss Quest")
-    menu = input("\nSelecciona una opción:\n1.- Juego Nuevo\n2.- Continuar\n3.- Salir del Juego\n")
-
-    match menu:
-        case "1":
-           sleep(1)
-           newgame()
-           escenas.intro()
-           sleep(1)
-           game()
-        case "2":
-            if load():
-                if fin_juego == True and dias == 50 and lester.dinero > 2000 and primer_beso == False:
-                    print("\nNo tienes el dinero suficiente para ejecutar el Plan De Lester, Perdiste el Juego\n")
-                    break
-                elif primer_beso == True:
-                    print("\nAl parecer ya diste tu primer beso ¡Felicidades! Ganaste el Juego\n")
-                else:
-                    sleep(1)
-                    game()
-        case "3": 
-            break
-        case _:
-            print("Selecciona una opción valida\n")
+if __name__ == "__main__":
+    print("Corriendo Juego.")
