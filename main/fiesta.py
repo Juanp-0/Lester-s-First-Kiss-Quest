@@ -1,4 +1,5 @@
 from random import choice
+import output
 
 nom_chicas = ["Romina", "Ariana", "Julieta", "María", "Maya", "Erika", "Sofía", "Carla", "Debanhi", "Deborah", "Katia", "Serena", "Ramona", "Ana", "Alejandra", "Tondelaya", "Victoria", "Nereida", "Violeta", "Fernanda", "Catalina"]
 nv_carisma_chicas = [1,2,3,4,5,6,7,8,9,10]
@@ -18,7 +19,7 @@ def generar_chicas(cant):
 
 def mostrar_chicas(chicas):
     for i, chica in enumerate(chicas, start=1):
-        print(f"{i}.- {chica.nombre}\nNivel de Carisma: {chica.nv_carisma}\n")
+        output.msg(f"{i}.- {chica.nombre}\nNivel de Carisma: {chica.nv_carisma}")
 
 def ligue_exito(personaje, chica):
     global tener_ligue, primer_beso 
@@ -32,14 +33,14 @@ def ligue_exito(personaje, chica):
     if eleccion == "Si":
         tener_ligue = True
         chica.estado_relacion_xp = 5
-        print("Parece que tus habilidades de carisma, fueron efectivas\n")
+        output.msg("Parece que tus habilidades de carisma, fueron efectivas")
     elif eleccion == "Flechazo":
         tener_ligue = True
         primer_beso = True
         chica.estado_relacion_xp = 21
-        print("Parece que tus habilidades de carisma, fueron superefectivas, tanto que acabas de dar tu primer beso\n")
+        output.msg("Parece que tus habilidades de carisma, fueron superefectivas, tanto que acabas de dar tu primer beso")
     else:
-        print("Parece que tus habilidades de carisma, no fueron efectivas\n")
+        output.msg("Parece que tus habilidades de carisma, no fueron efectivas")
 
     
 def chicas(personaje):
@@ -51,6 +52,6 @@ def chicas(personaje):
         if 0 <= chica_index < len(chicas):
             ligue_exito(personaje, chicas[chica_index])
         else:
-            print("Selecciona una opción válida\n")
+            output.msg("Selecciona una opción válida")
     except ValueError:
-        print("Selecciona una opción válida\n")
+        output.msg("Selecciona una opción válida")

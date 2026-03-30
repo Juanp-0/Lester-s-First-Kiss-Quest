@@ -1,5 +1,6 @@
 from random import choice
 from personaje import Personaje
+import output
 
 class Ligue(Personaje):
     def __init__(self,nombre,nv_carisma,estado_relacion_xp):
@@ -24,7 +25,7 @@ class Ligue(Personaje):
             return self.estado_relacion[4]
     
     def getDatos(self):
-        print(f"\nDatos de tu ligue:\nNombre: {self.nombre}\nNv. de Carisma: {self.nv_carisma}")
+        output.msg(f"Datos de tu ligue:\nNombre: {self.nombre}\nNv. de Carisma: {self.nv_carisma}")
         self.mostrar_estado_relacion()
     
     def hablar_ligue(self, tener_ligue, personaje):
@@ -33,38 +34,34 @@ class Ligue(Personaje):
             if aprobacion == "Like":
                 self.estado_relacion_xp += 1
                 if self.estado_relacion_xp >= 20:
-                    print(f"\nCitas a {self.nombre} al lugar donde se conocieron\n")
+                    output.msg(f"Citas a {self.nombre} al lugar donde se conocieron")
                     novia_escena()
                 else:
-                    print(f"\nParece ser que {self.nombre} ha disfrutado de la charla\n")
+                    output.msg(f"Parece ser que {self.nombre} ha disfrutado de la charla")
             
             elif aprobacion == "Excelente":
                 self.estado_relacion_xp += 3
                 if self.estado_relacion_xp >= 20:
-                    print(f"\nCitas a {self.nombre} al lugar donde se conocieron\n")
+                    output.msg(f"Citas a {self.nombre} al lugar donde se conocieron")
                     novia_escena()
                 else:
-                    print(f"\nParece ser que {self.nombre} ha disfrutado muchisimo de la charla\n")
+                    output.msg(f"Parece ser que {self.nombre} ha disfrutado muchisimo de la charla")
             
             else:
                 self.estado_relacion_xp -= 1
                 if self.estado_relacion_xp == 0:
                     self.tener_ligue = False
                     personaje.nv_carisma -= 2
-                    print("\nHiciste que tu ligue perdiera todo interes en tí\n")
+                    output.msg("Hiciste que tu ligue perdiera todo interes en tí")
                 else:
-                    print(f"\nParece ser que {self.nombre} no ha disfrutado de la charla\n")
+                    output.msg(f"Parece ser que {self.nombre} no ha disfrutado de la charla")
         
         else:
-            print(f"\nParece ser que {self.nombre} no esta disponible\n")
+            output.msg(f"Parece ser que {self.nombre} no esta disponible")
     
     def cita(self, personaje):
-        print(f"\nHas decidido salir con {self.nombre}\n")
-        print("Lugares para tener una cita:")
-        print("1.- Sandwichería Local (-30 de Energía, -100 de Dinero)")
-        print("2.- Cafetería (-40 de Energía, -200 de Dinero)")
-        print("3.- Buffet Italiano (-40 de Energía, -350 de Dinero)")
-        print("4.- Estadio de Fútbol (-50 de Energía, -1000 de Dinero)\n")
+        output.msg(f"Has decidido salir con {self.nombre}")
+        output.msg("Lugares para tener una cita:\n1.- Sandwichería Local (-30 de Energía, -100 de Dinero)\n2.- Cafetería (-40 de Energía, -200 de Dinero)\n3.- Buffet Italiano (-40 de Energía, -350 de Dinero)\n4.- Estadio de Fútbol (-50 de Energía, -1000 de Dinero)")
         
         lugares = {
             "1": {"nombre": "Sandwichería Local", "energia": 30, "dinero": 100},
@@ -83,39 +80,34 @@ class Ligue(Personaje):
                     dinero_req = lugar["dinero"]
                     nombre_lugar = lugar["nombre"]
                     
-                    if personaje.energia < energia_req: 
-                        print("\nNo tienes ganas de salir hoy\n")
-                    elif personaje.dinero < dinero_req: 
-                        print("\nNo te alcanza\n")
+                    if personaje.energia < energia_req:
+                        output.msg("No tienes ganas de salir hoy")
+                    elif personaje.dinero < dinero_req:
+                        output.msg("No te alcanza")
                     else:
-                        print(f"\nHas decidido ir a {nombre_lugar}\n")
-                        
+                        output.msg(f"Has decidido ir a {nombre_lugar}")
                         aprobacion = choice(self.ligue_aprobacion)
                         if aprobacion == "Like":
                             self.estado_relacion_xp += 1
                             if self.estado_relacion_xp >= 20:
                                 novia_escena(self)
                             else:
-                                print(f"\nParece ser que {self.nombre} ha disfrutado la cita\n")
-                        
+                                output.msg(f"Parece ser que {self.nombre} ha disfrutado la cita")
                         elif aprobacion == "Excelente":
                             self.estado_relacion_xp += 3
                             if self.estado_relacion_xp >= 20:
                                 novia_escena(self)
                             else:
-                                print(f"\nParece ser que {self.nombre} ha disfrutado muchísimo la cita\n")
-                        
+                                output.msg(f"Parece ser que {self.nombre} ha disfrutado muchísimo la cita")
                         else:
                             self.estado_relacion_xp -= 1
                             if self.estado_relacion_xp == 0:
                                 self.tener_ligue = False
                                 personaje.nv_carisma -= 2
-                                print("\nHiciste que tu ligue perdiera todo interés en ti\n")
-                                
+                                output.msg("Hiciste que tu ligue perdiera todo interés en ti")
                             else:
-                                print(f"\nParece ser que {self.nombre} no ha disfrutado la cita\n")
-                        
-                        print(f"\nRegresas a casa después de salir con tu ligue\n")
+                                output.msg(f"Parece ser que {self.nombre} no ha disfrutado la cita")
+                        output.msg("Regresas a casa después de salir con tu ligue")
                         break
                 
                 case "S" | "s":
@@ -136,13 +128,13 @@ class Ligue(Personaje):
                         self.hablar_ligue(True, personaje)
                         hablar_ligue_usado = True
                     elif self.estado_relacion_xp >= 20:
-                        print(f"\nYa eres novio de {self.nombre}, ya la conoces bien\n")
+                        output.msg(f"Ya eres novio de {self.nombre}, ya la conoces bien")
                     else:
-                        print(f"\nParece ser que ya has hablado con {self.nombre}\n")
+                        output.msg(f"Parece ser que ya has hablado con {self.nombre}")
                 
                 case "2":
                     if self.estado_relacion_xp >= 20:
-                        print(f"\nYa eres novio de {self.nombre}, ya la conoces bien\n")
+                        output.msg(f"Ya eres novio de {self.nombre}, ya la conoces bien")
                     else:
                         self.cita(personaje)
             
@@ -150,4 +142,4 @@ class Ligue(Personaje):
                     break
                 
                 case _:
-                    print("Selecciona una opción valida\n")
+                    output.msg("Selecciona una opción valida")

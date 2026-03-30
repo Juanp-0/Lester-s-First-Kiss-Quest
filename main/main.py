@@ -6,6 +6,7 @@ from personaje import Personaje
 from ligue import Ligue
 from item import Item, EnergItem, CarismaItem
 from tienda import Tienda
+import output
 
 #Stats
 dias = 1
@@ -76,10 +77,10 @@ def load():
         lester = Personaje(save_data["energia"], save_data["dinero"], save_data["nv_carisma"])
         ligue = Ligue(save_data["nom_ligue"], save_data["nv_carisma_ligue"], save_data["estado_relacion_xp"])
         
-        print("\nJuego cargado exitosamente.\n")
+        output.msg("Juego cargado exitosamente.")
         return True
     except FileNotFoundError:
-        print("\nNo hay un archivo de guardado existente. Inicia un nuevo juego.\n")
+        output.msg("No hay un archivo de guardado existente. Inicia un nuevo juego.")
         return False
 
 def save():
@@ -100,7 +101,7 @@ def save():
     }
     with open("lester_sav.json", "w") as save_game:
         json.dump(save_data, save_game)
-    print("\nJuego guardado exitosamente.\n")
+    output.msg("Juego guardado exitosamente.")
 
 
 #Hub
@@ -120,14 +121,14 @@ def game():
                 if not tener_ligue:
                     lester.salir(primer_beso)
                 else:
-                    print(f"\nMejor trata de salir con {ligue.nombre}\n")
+                    output.msg(f"Mejor trata de salir con {ligue.nombre}")
             case "4":
                 sleep(1)
-                print("\nCajero: Bienvenido ¿En que te puedo servir?")
+                output.msg("Cajero: Bienvenido ¿En que te puedo servir?")
                 tienda.tienda_menu(lester)
             case "5":
                 if not tener_ligue:
-                    print("\nNo tienes un ligue actualmente\n")
+                    output.msg("No tienes un ligue actualmente")
                 else:
                     ligue.ligueMenu(lester)
             case "6": 
@@ -135,11 +136,11 @@ def game():
                 hablar_uso = False
                 dax_disponible = True
                 if dias == 50 and lester.dinero < 2000:
-                    print("\nNo tienes el dinero suficiente para ejecutar el Plan De Lester, Perdiste el Juego\n")
+                    output.msg("No tienes el dinero suficiente para ejecutar el Plan De Lester, Perdiste el Juego")
                     save()
                     break
                 elif dias == 50 and lester.dinero >= 2000:
-                    print("\nNo diste tu primer beso, tendras que ejecutar el Plan De Lester")
+                    output.msg("No diste tu primer beso, tendras que ejecutar el Plan De Lester")
                     sleep(1)
                     save()
                     break 
@@ -152,7 +153,7 @@ def game():
             case "8":
                 break
             case _:
-                print("Selecciona una opción valida\n")
+                output.msg("Selecciona una opción valida")
 
 #Menu
 if __name__ == "__main__":
