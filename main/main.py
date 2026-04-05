@@ -23,7 +23,7 @@ hablar_ligue_uso = False
 primer_beso = False
 fin_juego = False
 
-tienda = Tienda([EnergItem("Bebida Energetíca", 20, 20), EnergItem("Café Enbotellado", 15, 10), CarismaItem("Perfume", 150, 1)])
+tienda = Tienda([EnergItem("Bebida Energetíca", 20, 20, "+20 de Energia"), EnergItem("Café Enbotellado", 15, 10, "+10 de Energia"), CarismaItem("Perfume", 150, 1, "+1 Nv. de Carisma")])
 lester = Personaje(100, 0, 0)
 ligue = Ligue(None, 0, 0)
 

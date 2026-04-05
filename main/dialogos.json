@@ -677,8 +677,6 @@
         "cajero_despedida": "Cajero: ¡Gracias por comprar! ¡Vuelva pronto!",
         "tienda_compra_ok": "Has comprado {item} y lo has usado",
         "tienda_sin_dinero": "No tienes suficiente dinero para comprar este item",
-        "tienda_indice_invalido": "Índice de item no válido",
-        "tienda_opcion_invalida": "Selecciona una opción válida",
         "hub_sin_ligue": "No tienes un ligue actualmente",
         "hub_ya_novia": "Mejor trata de salir con {nombre}",
         "hub_fin_sin_dinero": "No tienes el dinero suficiente para ejecutar el Plan De Lester, Perdiste el Juego",

@@ -6,7 +6,7 @@ class Tienda:
     
     def mostrar_items(self):
         for i, item in enumerate(self.items):
-            output.msg(f"{i + 1}. {item.nombre} - Precio: ${item.precio}")
+            output.msg(f"{i + 1}. {item.nombre} - Precio: ${item.precio} - {item.descripcion}")
 
     def comprar_item(self, personaje, item_index):
         if 0 <= item_index < len(self.items):

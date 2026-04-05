@@ -28,7 +28,7 @@ class Ligue(Personaje):
         output.msg(f"Datos de tu ligue:\nNombre: {self.nombre}\nNv. de Carisma: {self.nv_carisma}")
         self.mostrar_estado_relacion()
     
-    def hablar_ligue(self, tener_ligue, personaje):
+    def hablar_ligue(self, personaje):
         if choice(self.ligue_chance):
             aprobacion = choice(self.ligue_aprobacion)
             if aprobacion == "Like":
