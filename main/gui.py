@@ -30,6 +30,7 @@ app.geometry("500x450")
 escena_actual = []   # lista de entradas de la escena en curso
 indice = [0]         # usamos lista para poder modificarlo dentro de funciones
 timer_id = [None]    # ID del after() en curso, para poder cancelarlo
+frame_retorno = [None]  # frame al que volver cuando termina la escena
 
 # ─── Función para cambiar de frame ────────────────────────────────────────────
 
@@ -67,10 +68,12 @@ def mostrar_siguiente():
     cancelar_timer()
 
     if indice[0] >= len(escena_actual):
-        # Escena terminada → pasar a Hub automáticamente
+        # Escena terminada → volver al frame de retorno (hub por defecto)
         msg_texto.config(text="")
         msg_personaje.config(text="")
-        mostrar(frame_hub)
+        destino = frame_retorno[0] if frame_retorno[0] is not None else frame_hub
+        frame_retorno[0] = None
+        mostrar(destino)
         return
 
     entrada = escena_actual[indice[0]]
@@ -154,6 +157,7 @@ def accion_dormir():
     main.dias = main.lester.dormir(main.dias)
     main.hablar_uso = False
     main.dax_disponible = True
+    main.hablar_ligue_uso = False
     if main.dias == 50 and main.lester.dinero < 2000:
         main.save()
     elif main.dias == 50 and main.lester.dinero >= 2000:
@@ -240,25 +244,48 @@ frame_ligue = tk.Frame(app)
 
 def actualizar_ligue():
     nombre = main.ligue.nombre or "???"
+    lbl_ligue_nombre .config(text=f"Nombre: {nombre}")
+    lbl_ligue_carisma.config(text=f"Nv. de Carisma: {main.ligue.nv_carisma}")
+    lbl_ligue_estado .config(text=f"Estado: {main.ligue.mostrar_estado_relacion()}")
     btn_hablar_ligue.config(text=f"Hablar con {nombre}")
-    btn_cita_ligue  .config(text=f"Cita con {nombre}")
+    #btn_cita_ligue  .config(text=f"Cita con {nombre}")
 
-btn_hablar_ligue = tk.Button(frame_ligue, text="Hablar con ligue", command=lambda: main.ligue.hablar_ligue(main.lester), pady=5)
-btn_cita_ligue   = tk.Button(frame_ligue, text="Cita con ligue",   command=lambda: main.ligue.cita(main.lester),         pady=5)
-btn_volver_hub   = tk.Button(frame_ligue, text="Volver al Hub",    command=accion_volver_hub,                            pady=5)
+lbl_ligue_nombre  = tk.Label(frame_ligue, justify="left")
+lbl_ligue_carisma = tk.Label(frame_ligue, justify="left")
+lbl_ligue_estado  = tk.Label(frame_ligue, justify="left")
+
+lbl_ligue_nombre .pack(pady=(10, 2))
+lbl_ligue_carisma.pack(pady=2)
+lbl_ligue_estado .pack(pady=(2, 10))
+
+def accion_hablar_ligue():
+    if main.hablar_ligue_uso:
+        output.msg(f"Ya hablaste con {main.ligue.nombre} hoy")
+    else:
+        frame_retorno[0] = frame_ligue
+        main.ligue.hablar_ligue(main.lester)
+        main.hablar_ligue_uso = True
+
+def accion_cita_ligue():
+    frame_retorno[0] = frame_ligue
+    main.ligue.cita(main.lester)
+
+btn_hablar_ligue = tk.Button(frame_ligue, text="Hablar con ligue", command=accion_hablar_ligue, pady=5)
+btn_cita_ligue   = tk.Button(frame_ligue, text="Cita con ligue",   command=accion_cita_ligue,   pady=5)
+btn_volver_hub   = tk.Button(frame_ligue, text="Volver al Hub",    command=accion_volver_hub,   pady=5)
 
 btn_hablar_ligue.pack(pady=6)
 btn_cita_ligue  .pack(pady=6)
 btn_volver_hub  .pack(pady=6)
 
 # ─── Pantalla Citas ──────────────────────────────────────────────────────────
-frame_citas = tk.Frame(app)
-
+'''frame_citas = tk.Frame(app)
 def actualizar_citas():
     nombre = main.ligue.nombre or "??"
     btn_cine.config(text=f"Cine con {nombre}")
     btn_parque.config(text=f"Parque con {nombre}")
     btn_restaurante.config(text=f"Restaurante con {nombre}")
+
 
 btn_cine = tk.Button(frame_citas, text="Cine", command=lambda: main.ligue.cita(main.lester, "cine"), pady=5)
 btn_parque = tk.Button(frame_citas, text="Parque", command=lambda: main.ligue.cita(main.lester, "parque"), pady=5)
@@ -268,7 +295,7 @@ btn_volver_hub = tk.Button(frame_citas, text="Volver al Hub", command=accion_vol
 btn_cine.pack(pady=6)
 btn_parque.pack(pady=6)
 btn_restaurante.pack(pady=6)
-btn_volver_hub.pack(pady=6)
+btn_volver_hub.pack(pady=6)'''
 
 # ─── Pantalla Escenas ──────────────────────────────────────────────────────────
 frame_escenas = tk.Frame(app)

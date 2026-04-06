@@ -24,9 +24,6 @@ class Ligue(Personaje):
         else:
             return self.estado_relacion[4]
     
-    def getDatos(self):
-        output.msg(f"Datos de tu ligue:\nNombre: {self.nombre}\nNv. de Carisma: {self.nv_carisma}")
-        self.mostrar_estado_relacion()
     
     def hablar_ligue(self, personaje):
         if choice(self.ligue_chance):
