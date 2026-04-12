@@ -14,11 +14,11 @@ class Tienda:
             if personaje.dinero >= item.precio:
                 personaje.dinero -= item.precio
                 item.usar(personaje)
-                output.msg(f"Has comprado {item.nombre} y lo has usado")
+                output.msg_key("tienda_compra_ok", item=item.nombre)
             else:
-                output.msg("No tienes suficiente dinero para comprar este item")
+                output.msg_key("tienda_sin_dinero")
         else:
-            output.msg("Índice de item no válido")
+            output.msg_key("tienda_sin_dinero")
 
     def tienda_menu(self, personaje):
         while True:
@@ -27,7 +27,7 @@ class Tienda:
             
             match seleccion:
                 case "S" | "s":
-                    output.msg("Cajero: ¡Gracias por comprar! ¡Vuelva pronto!")
+                    output.msg_key("cajero_despedida")
                     break
                 
                 case _:
@@ -35,4 +35,4 @@ class Tienda:
                         item_index = int(seleccion) - 1
                         self.comprar_item(personaje, item_index)
                     except ValueError:
-                        output.msg("Selecciona una opción válida")    
+                        output.msg_key("hub_opcion_invalida")

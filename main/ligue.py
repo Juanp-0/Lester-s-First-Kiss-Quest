@@ -5,12 +5,7 @@ import output
 def novia_escena():
     import main as _main
     _main.primer_beso = True
-    output.msg(f"\u00a1Felicidades! {_main.ligue.nombre} es ahora tu novia")
-    try:
-        import gui as _gui
-        _gui.iniciar_escena("novia_escena")
-    except Exception:
-        pass
+    output.escena("novia_escena", nombre=_main.ligue.nombre)
 
 class Ligue(Personaje):
     def __init__(self,nombre,nv_carisma,estado_relacion_xp):
@@ -41,30 +36,30 @@ class Ligue(Personaje):
             if aprobacion == "Like":
                 self.estado_relacion_xp += 1
                 if self.estado_relacion_xp >= 20:
-                    output.msg(f"Citas a {self.nombre} al lugar donde se conocieron")
+                    output.msg_key("ligue_cita_novia_inicio", nombre=self.nombre)
                     novia_escena()
                 else:
-                    output.msg(f"Parece ser que {self.nombre} ha disfrutado de la charla")
+                    output.msg_key("ligue_hablar_like", nombre=self.nombre)
             
             elif aprobacion == "Excelente":
                 self.estado_relacion_xp += 3
                 if self.estado_relacion_xp >= 20:
-                    output.msg(f"Citas a {self.nombre} al lugar donde se conocieron")
+                    output.msg_key("ligue_cita_novia_inicio", nombre=self.nombre)
                     novia_escena()
                 else:
-                    output.msg(f"Parece ser que {self.nombre} ha disfrutado muchisimo de la charla")
+                    output.msg_key("ligue_hablar_excelente", nombre=self.nombre)
             
             else:
                 self.estado_relacion_xp -= 1
                 if self.estado_relacion_xp == 0:
                     self.tener_ligue = False
                     personaje.nv_carisma -= 2
-                    output.msg("Hiciste que tu ligue perdiera todo interes en tí")
+                    output.msg_key("ligue_hablar_trabo")
                 else:
-                    output.msg(f"Parece ser que {self.nombre} no ha disfrutado de la charla")
+                    output.msg_key("ligue_hablar_dislike", nombre=self.nombre)
         
         else:
-            output.msg(f"Parece ser que {self.nombre} no esta disponible")
+            output.msg_key("ligue_hablar_no_disp", nombre=self.nombre)
     
     LUGARES_CITA = {
         "1": {"nombre": "Sandwichería Local", "energia": 30, "dinero": 100},
@@ -80,30 +75,34 @@ class Ligue(Personaje):
         nombre_lugar = lugar["nombre"]
 
         if personaje.energia < energia_req:
-            output.msg("No tienes ganas de salir hoy")
+            output.msg_key("ligue_cita_sin_energia")
         elif personaje.dinero < dinero_req:
-            output.msg("No te alcanza")
+            output.msg_key("ligue_cita_sin_dinero")
         else:
-            output.msg(f"Has decidido ir a {nombre_lugar}")
+            output.msg_key("ligue_cita_lugar", nombre_lugar=nombre_lugar)
+            personaje.energia -= energia_req
+            personaje.dinero  -= dinero_req
             aprobacion = choice(self.ligue_aprobacion)
             if aprobacion == "Like":
                 self.estado_relacion_xp += 1
                 if self.estado_relacion_xp >= 20:
+                    output.msg_key("ligue_cita_novia_inicio", nombre=self.nombre)
                     novia_escena()
                 else:
-                    output.msg(f"Parece ser que {self.nombre} ha disfrutado la cita")
+                    output.msg_key("ligue_cita_like", nombre=self.nombre)
             elif aprobacion == "Excelente":
                 self.estado_relacion_xp += 3
                 if self.estado_relacion_xp >= 20:
+                    output.msg_key("ligue_cita_novia_inicio", nombre=self.nombre)
                     novia_escena()
                 else:
-                    output.msg(f"Parece ser que {self.nombre} ha disfrutado muchísimo la cita")
+                    output.msg_key("ligue_cita_excelente", nombre=self.nombre)
             else:
                 self.estado_relacion_xp -= 1
                 if self.estado_relacion_xp == 0:
                     self.tener_ligue = False
                     personaje.nv_carisma -= 2
-                    output.msg("Hiciste que tu ligue perdiera todo interés en ti")
+                    output.msg_key("ligue_hablar_trabo")
                 else:
-                    output.msg(f"Parece ser que {self.nombre} no ha disfrutado la cita")
-            output.msg("Regresas a casa después de salir con tu ligue")
+                    output.msg_key("ligue_cita_dislike", nombre=self.nombre)
+            output.msg_key("ligue_cita_regreso")

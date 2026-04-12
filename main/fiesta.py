@@ -30,12 +30,12 @@ def ligue_exito(personaje, chica):
         _main.tener_ligue = True
         _main.ligue = chica
         chica.estado_relacion_xp = 5
-        output.msg(f"Parece que tus habilidades de carisma fueron efectivas. ¡{chica.nombre} es tu nuevo ligue!")
+        output.msg_key("fiesta_ligue_efectivo")
     elif eleccion == "Flechazo":
         _main.tener_ligue = True
         _main.primer_beso = True
         _main.ligue = chica
         chica.estado_relacion_xp = 21
-        output.msg(f"¡Flechazo! {chica.nombre} y tú se besaron. ¡Diste tu primer beso!")
+        output.escena("novia_escena", nombre=chica.nombre)
     else:
-        output.msg(f"Parece que tus habilidades de carisma no fueron suficientes con {chica.nombre}.")
+        output.msg_key("fiesta_ligue_noEf", nombre=chica.nombre)

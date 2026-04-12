@@ -30,7 +30,7 @@ ligue = Ligue(None, 0, 0)
 #Sistema de Guardado
 def newgame():
     global dias, hablar_uso, hablar_ligue_uso, fin_juego, lester, ligue, tener_ligue, primer_beso, dax_disponible
-    # Inicializar variables globales
+    # Reiniciar variables globales
     dias = 1
     hablar_uso = False
     dax_disponible = True
@@ -38,21 +38,24 @@ def newgame():
     fin_juego = False
     tener_ligue = False
     primer_beso = False
-    
+
+    # Recrear personajes con valores iniciales
+    lester = Personaje(100, 0, 0)
+    ligue = Ligue(None, 0, 0)
 
     # Guardar estado inicial
     save_data = {
         "dias": 1,
-        "energia": lester.energia,
-        "dinero": lester.dinero,
-        "nv_carisma": lester.nv_carisma,
+        "energia": 100,
+        "dinero": 0,
+        "nv_carisma": 0,
         "hablar_uso": False,
         "dax_disponible": True,
         "tener_ligue": False,
         "primer_beso": False,
-        "nom_ligue": ligue.nombre,
-        "nv_carisma_ligue": ligue.nv_carisma,
-        "estado_relacion_xp": ligue.estado_relacion_xp,
+        "nom_ligue": None,
+        "nv_carisma_ligue": 0,
+        "estado_relacion_xp": 0,
         "hablar_ligue_uso": False,
         "fin_juego": False
     }
@@ -77,10 +80,10 @@ def load():
         lester = Personaje(save_data["energia"], save_data["dinero"], save_data["nv_carisma"])
         ligue = Ligue(save_data["nom_ligue"], save_data["nv_carisma_ligue"], save_data["estado_relacion_xp"])
         
-        output.msg("Juego cargado exitosamente.")
+        output.msg_key("juego_guardado")
         return True
     except FileNotFoundError:
-        output.msg("No hay un archivo de guardado existente. Inicia un nuevo juego.")
+        output.msg_key("no_guardado")
         return False
 
 def save():
@@ -101,7 +104,7 @@ def save():
     }
     with open("lester_sav.json", "w") as save_game:
         json.dump(save_data, save_game)
-    output.msg("Juego guardado exitosamente.")
+    output.msg_key("juego_guardado")
 
 
 #Hub
@@ -121,14 +124,14 @@ def game():
                 if not tener_ligue:
                     lester.salir(primer_beso)
                 else:
-                    output.msg(f"Mejor trata de salir con {ligue.nombre}")
+                    output.msg_key("hub_ya_novia", nombre=ligue.nombre)
             case "4":
                 sleep(1)
-                output.msg("Cajero: Bienvenido ¿En que te puedo servir?")
+                output.msg_key("cajero_bienvenida")
                 tienda.tienda_menu(lester)
             case "5":
                 if not tener_ligue:
-                    output.msg("No tienes un ligue actualmente")
+                    output.msg_key("hub_sin_ligue")
                 else:
                     ligue.ligueMenu(lester)
             case "6": 
@@ -136,11 +139,11 @@ def game():
                 hablar_uso = False
                 dax_disponible = True
                 if dias == 50 and lester.dinero < 2000:
-                    output.msg("No tienes el dinero suficiente para ejecutar el Plan De Lester, Perdiste el Juego")
+                    output.msg_key("hub_fin_sin_dinero")
                     save()
                     break
                 elif dias == 50 and lester.dinero >= 2000:
-                    output.msg("No diste tu primer beso, tendras que ejecutar el Plan De Lester")
+                    output.msg_key("hub_fin_plan_lester")
                     sleep(1)
                     save()
                     break 
@@ -153,7 +156,7 @@ def game():
             case "8":
                 break
             case _:
-                output.msg("Selecciona una opción valida")
+                output.msg_key("hub_opcion_invalida")
 
 #Menu
 if __name__ == "__main__":

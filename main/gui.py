@@ -21,6 +21,25 @@ def mostrar_como_escena(texto: str):
 
 output.set_handler(mostrar_como_escena)
 
+def disparar_escena(clave: str, params: dict):
+    """Handler de escenas: cancela el timer actual, reemplaza {params} y arranca la escena."""
+    cancelar_timer()
+    plantilla = DIALOGOS.get(clave, [])
+    global escena_actual
+    escena_actual = []
+    for entrada in plantilla:
+        nueva = dict(entrada)
+        nueva["texto"] = nueva["texto"].format(**params) if params else nueva["texto"]
+        if "personaje" in nueva:
+            nueva["personaje"] = nueva["personaje"].format(**params) if params else nueva["personaje"]
+        escena_actual.append(nueva)
+    indice[0] = 0
+    frame_retorno[0] = frame_hub
+    mostrar(frame_escenas)
+    mostrar_siguiente()
+
+output.set_scene_handler(disparar_escena)
+
 # ─── App ───────────────────────────────────────────────────────────────────────
 app = tk.Tk()
 app.title("Lester's First Kiss Quest")
@@ -175,7 +194,7 @@ def checar_ligue():
     if main.tener_ligue == True:
         mostrar(frame_ligue)
     else:
-        output.msg("No tienes un ligue")
+        output.msg_key("hub_sin_ligue")
 
 btn_trabajar  = tk.Button(frame_botones, text="Trabajar",       command=lambda: [main.lester.trabajar(), actualizar_gui()], pady=5)
 btn_hablar_dax = tk.Button(frame_botones, text="Hablar con Dax", command=accion_hablar_dax,          pady=5)
@@ -282,7 +301,7 @@ def actualizar_fiesta():
 def accion_ir_fiesta():
     if main.tener_ligue:
         frame_retorno[0] = frame_hub
-        output.msg(f"Mejor trata de salir con {main.ligue.nombre}")
+        output.msg_key("hub_ya_novia", nombre=main.ligue.nombre)
     else:
         frame_retorno[0] = frame_hub
         puede_salir = main.lester.salir(main.primer_beso)
@@ -314,7 +333,7 @@ lbl_ligue_estado .pack(pady=(2, 10))
 def accion_hablar_ligue():
     frame_retorno[0] = frame_ligue
     if main.hablar_ligue_uso:
-        output.msg(f"Ya hablaste con {main.ligue.nombre} hoy")
+        output.msg_key("ligue_menu_ya_hablaste", nombre=main.ligue.nombre)
     else:
         main.ligue.hablar_ligue(main.lester)
         main.hablar_ligue_uso = True
