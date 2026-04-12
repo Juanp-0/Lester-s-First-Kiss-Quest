@@ -1,15 +1,1 @@
-{
-    "dias": 1,
-    "energia": 100,
-    "dinero": 0,
-    "nv_carisma": 0,
-    "hablar_uso": false,
-    "dax_disponible": true,
-    "tener_ligue": true,
-    "primer_beso": false,
-    "nom_ligue": "Tilincia",
-    "nv_carisma_ligue": 0,
-    "estado_relacion_xp": 5,
-    "hablar_ligue_uso": false,
-    "fin_juego": false
-}
+{"dias": 10, "energia": 100, "dinero": 530, "nv_carisma": 3, "hablar_uso": false, "dax_disponible": true, "tener_ligue": true, "primer_beso": false, "nom_ligue": "Romina", "nv_carisma_ligue": 1, "estado_relacion_xp": 20, "hablar_ligue_uso": false, "fin_juego": false}

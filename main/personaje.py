@@ -52,21 +52,22 @@ class Personaje:
         return hablar_uso, dax_disponible
     
     def salir(self, primer_beso):
+        """Verifica condiciones para salir de fiesta. Retorna True si puede."""
         if self.energia >= 30 and self.dinero >= 20:
-            from fiesta import chicas
             self.energia -= 30
             self.dinero -= 20
             output.msg("Te escapas a escondidas de tu casa\nTomas el metro para llegar al centro de la ciudad\nEntras a la primera discoteca que ves")
             output.msg("La estas pasando excelente\nParece que se acercan unas chicas interesadas en ti\nEs hora de usar tus habilidades de carisma")
-            chicas(self)
-            if primer_beso == True:
-                self.dormir()
+            return True
         elif self.dinero < 20:
             output.msg("No tienes dinero para Salir de fiesta")
+            return False
         elif self.energia < 30:
             output.msg("No tienes ganas de Salir de fiesta")
+            return False
         else:
             output.msg("Regresas a Casa de manera silenciosa, despues de una noche de locura")
+            return False
 
 
 
