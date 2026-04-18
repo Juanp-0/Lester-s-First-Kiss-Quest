@@ -1,0 +1,816 @@
+{
+    "intro": [
+        {
+            "tipo": "narracion",
+            "texto": "Esta es una historia de cuatro amigos, Lester, Dax, Hugh y Zohan"
+        },
+        {
+            "tipo": "narracion",
+            "texto": "Son cuatro chicos de 19 años, quienes se conocen desde la secundaria"
+        },
+        {
+            "tipo": "narracion",
+            "texto": "En la noche de año nuevo, Zohan se acordo de algo que le dijo Lester"
+        },
+        {
+            "tipo": "narracion",
+            "texto": "Una promesa, que tiene que cumplir en el presente año"
+        },
+        {
+            "tipo": "narracion",
+            "texto": "Por lo que rapidamente, Zohan toma su celular y decide hablar en el chat grupal de los amigos"
+        },
+        {
+            "tipo": "separador",
+            "texto": "1 de Enero de 2015 - 12:30 am - Chat Grupal"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "@todos"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "Tengo un anuncio importante que dar"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Dax",
+            "texto": "¿Que Paso?"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Dax",
+            "texto": "Me estaba durmiendo"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "Me acordé de algo de suma importancia"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "Es que no se si hacerlo más al rato"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "Porque necesito especialmente a Lester disponible"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "Aqui estoy"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "Dilo de una vez"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "Okey"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "@todos"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "Primero que nada"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "Feliz 2015"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "Ya es 2015"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "Y quiero hacerle un amable recordatorio a mi amigo Lester"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "Ya que dijo que haría algo especial este año"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Hugh",
+            "texto": "Al fin sacaras a Lester del Grupo?"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "Nop"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "Mi buen amigo Lester comento algo el 16 de agosto de 2013 a las 7:43 pm"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "y cito"
+        },
+        {
+            "tipo": "separador",
+            "texto": "16 de Agosto de 2013 - 19:43 pm - Chat Grupal"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "Aunque claro aún tengo presente el plan por si no doy mi primer beso antes de los 20"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "Ir a una convención"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "Ver a una cosplayer de chica anime"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "y ofrecerle unos $2000 para que me de un beso"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "con todo respeto"
+        },
+        {
+            "tipo": "separador",
+            "texto": "1 de Enero de 2015 - 01:00 am - Chat Grupal"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Dax",
+            "texto": "XD"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Dax",
+            "texto": "Ya se por donde va esto"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "Tic Tac Lester Tic Tac"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "Se cancela"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "Ni siquiera recordaba haber dicho eso"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Hugh",
+            "texto": "XD"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Hugh",
+            "texto": "Eres un reverendo pendejo Lester"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "No Lester"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "Ya no hay vuelta atrás"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "Te quedan 50 días Lester"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "Lo que quedaba de 2013 no hiciste nada"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "y en 2014 tampoco"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "Y ya solo te quedan menos de 2 meses Lester"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "El tiempo corre"
+        },
+        {
+            "tipo": "narracion",
+            "texto": "Lester cumple 20 años dentro de 50 dias"
+        },
+        {
+            "tipo": "narracion",
+            "texto": "Asi que como dijo Zohan"
+        },
+        {
+            "tipo": "narracion",
+            "texto": "EL TIEMPO CORRE"
+        }
+    ],
+    "bad_ending": [
+        {
+            "tipo": "separador",
+            "texto": "Unos Meses Despues"
+        },
+        {
+            "tipo": "separador",
+            "texto": "14 de Marzo de 2015 - 16:00 pm - Super Geek Fest"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "Muy bien"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "Ya llegamos al Super Geek Fest"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "¿Estas Listo Lester?"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "MmMmMmMmM"
+        },
+        {
+            "tipo": "narracion",
+            "texto": "Ves nerviosamente a Hugh a quien le importas un comino pero ahi esta"
+        },
+        {
+            "tipo": "narracion",
+            "texto": "Luego ves nerviosamente a Dax quien trato de ayudarte pero fallo estrepitosamente"
+        },
+        {
+            "tipo": "narracion",
+            "texto": "Ves que ambos te estan mirando de una manera bastante peculiar, como si estuviaran aguantando la respiración"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "Chicos ¿Le Decimos?"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "Decirme que"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "Te sere sincero Zohan"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "No alcanze a ahorrar $2000 para pagarle a la cosplayer"
+        },
+        {
+            "tipo": "narracion",
+            "texto": "Ves que Hugh y Dax se empiezan a reír fuertemente"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "¡PUTA MADRE LESTER!"
+        }
+    ],
+    "norm_ending": [
+        {
+            "tipo": "separador",
+            "texto": "Unos Meses Despues"
+        },
+        {
+            "tipo": "separador",
+            "texto": "14 de Marzo de 2015 - 16:00 pm - Super Geek Fest"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "Muy bien"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "Ya llegamos al Super Geek Fest"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "¿Estas Listo Lester?"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "Eso Creo"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "Okey, En base a este mapa, estamos en el centro y"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "¡AY CARAJO!"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "¡SON UN MONTON DE COSPLAYERS!"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Dax",
+            "texto": "Es una convención, genio"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "Lo sé pero va a estar dificíl econtrar a una cosplayer de chica anime"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Hugh",
+            "texto": "Lo que tenemos que hacer por el estupido de Lester"
+        },
+        {
+            "tipo": "separador",
+            "texto": "Unas Horas Despues"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "Okey, esta es la Cosplayer No. 500 de chica anime"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "Muy Bien Lester ya sabes que decir campeón"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "MmMmMmMmM"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "No lo se Zohan"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "Empiezo a creer que esto es una perdida de tiempo"
+        },
+        {
+            "tipo": "narracion",
+            "texto": "Ves lentamente como Zohan te da una cachetada"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "Auch"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "Alivianate Bastardo"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "Ya llegamos aquí y no tienes nada que perder¿si o no?"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Dax",
+            "texto": "Si"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Hugh",
+            "texto": "Va a perder o $2000 o su dignidad"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "Callate Hugh"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "Que dices Lester ¿Lo haras o eres un cobarde?"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "Esta bien"
+        },
+        {
+            "tipo": "narracion",
+            "texto": "Te acercas lentamente a la cosplayer, estas congelado y no sabes que decir"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "MmMmMmMmM"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "Oye Amiga"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "MmMmMmMmM"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Cosplayer de Chica Anime",
+            "texto": "¿Que se te ofrece amigo?"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "MmMmMmMmM"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "No se si sea posible que me des unnnnn"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "MmMmMmMmM"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "Carajo, Lester se trabó"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Dax",
+            "texto": "Se le olvidaron todos los consejos que le di"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Hugh",
+            "texto": "Que perdedor"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Cosplayer de Chica Anime",
+            "texto": "¿Un que?"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "U-un Beso a cambio d-de $2000"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Cosplayer de Chica Anime",
+            "texto": "..."
+        },
+        {
+            "tipo": "narracion",
+            "texto": "Estas demasiado nervioso porque se esta tardando en responder"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Cosplayer de Chica Anime",
+            "texto": "Va ¿Porqué no?"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "Lo logró, ese bastardo lo logró"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Dax",
+            "texto": "Parece que alguien se tiene que retractar por lo que dijo hace rato"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Hugh",
+            "texto": "Por como lo hizo, no lo creo"
+        },
+        {
+            "tipo": "narracion",
+            "texto": "Entraste en un extasís, al fin diste tu primer beso"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "¡CHICOS! ¡LO LOGRE!"
+        }
+    ],
+    "novia_escena": [
+        {
+            "tipo": "separador",
+            "texto": "En ese mismo momento"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "Oye {nombre}"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "{nombre}",
+            "texto": "Dime ¿Qué Ocurre?"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "Es que, bueno, tu sabes"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "Ya llevamos buen rato saliendo"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "y yo me preguntaba"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "..."
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "MmMmMmMmM"
+        },
+        {
+            "tipo": "narracion",
+            "texto": "Estas congelado, tienes miedo, la incertidumbre te provoca inquietud"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "{nombre}",
+            "texto": "Lester ¿Qué Pasa?"
+        },
+        {
+            "tipo": "narracion",
+            "texto": "Escuchar la voz de {nombre}, viendo su preocupación, te hace despertar"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "{nombre}"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "¿Quisieras ser mi novia?"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "{nombre}",
+            "texto": "..."
+        },
+        {
+            "tipo": "narracion",
+            "texto": "Estas demasiado nervioso porque se esta tardando en responder"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "{nombre}",
+            "texto": "Si"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "{nombre}",
+            "texto": "Si quiero ser tu novia"
+        },
+        {
+            "tipo": "narracion",
+            "texto": "No lo puedes creer, lo lograste, quisieras que tus amigos estuvieran aqui para verlo"
+        },
+        {
+            "tipo": "narracion",
+            "texto": "Ves lentamente como {nombre} se avalanza sobre ti"
+        },
+        {
+            "tipo": "narracion",
+            "texto": "Y"
+        },
+        {
+            "tipo": "narracion",
+            "texto": "Entraste en un extasís, al fin diste tu primer beso"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "(Wow)"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "(Lo Logré)"
+        }
+    ],
+    "msgs": {
+        "no_guardado": "No hay un archivo de guardado existente. Inicia un nuevo juego.",
+        "juego_guardado": "Juego guardado exitosamente.",
+        "trabajar_ok": "Regresas a Casa, después de un arduo día de trabajo",
+        "trabajar_sin_energia": "No tienes ganas de ir a Trabajar",
+        "carisma_maximo": "Has llegado al máximo nivel de carisma",
+        "dax_consejos": "Dax te da unos buenos consejos para aumentar tu carisma",
+        "dax_no_disponible": "Parece ser que Dax no está disponible",
+        "dax_ya_hablaste": "Parece ser que ya has hablado con Dax",
+        "salir_inicio": "Te escapas a escondidas de tu casa\nTomas el metro para llegar al centro de la ciudad\nEntras a la primera discoteca que ves",
+        "salir_chicas": "La estas pasando excelente\nParece que se acercan unas chicas interesadas en ti\nEs hora de usar tus habilidades de carisma",
+        "salir_sin_dinero": "No tienes dinero para Salir de fiesta",
+        "salir_sin_energia": "No tienes ganas de Salir de fiesta",
+        "salir_regreso": "Regresas a Casa de manera silenciosa, después de una noche de locura",
+        "fiesta_opcion_invalida": "Selecciona una opción válida",
+        "fiesta_ligue_efectivo": "Parece que tus habilidades de carisma, fueron efectivas",
+        "fiesta_ligue_superEf": "Parece que tus habilidades de carisma, fueron superefectivas, tanto que acabas de dar tu primer beso",
+        "fiesta_ligue_noEf": "Parece que tus habilidades de carisma, no fueron efectivas",
+        "cajero_bienvenida": "Cajero: Bienvenido ¿En qué te puedo servir?",
+        "cajero_despedida": "Cajero: ¡Gracias por comprar! ¡Vuelva pronto!",
+        "tienda_compra_ok": "Has comprado {item} y lo has usado",
+        "tienda_sin_dinero": "No tienes suficiente dinero para comprar este item",
+        "hub_sin_ligue": "No tienes un ligue actualmente",
+        "hub_ya_novia": "Mejor trata de salir con {nombre}",
+        "hub_fin_sin_dinero": "No tienes el dinero suficiente para ejecutar el Plan De Lester, Perdiste el Juego",
+        "hub_fin_plan_lester": "No diste tu primer beso, tendrás que ejecutar el Plan De Lester",
+        "hub_opcion_invalida": "Selecciona una opción valida",
+        "ligue_datos": "Datos de tu ligue:\nNombre: {nombre}\nNv. de Carisma: {nv_carisma}",
+        "ligue_hablar_like": "Parece ser que {nombre} ha disfrutado de la charla",
+        "ligue_hablar_excelente": "Parece ser que {nombre} ha disfrutado muchísimo de la charla",
+        "ligue_hablar_dislike": "Parece ser que {nombre} no ha disfrutado de la charla",
+        "ligue_hablar_trabo": "Hiciste que tu ligue perdiera todo interés en ti",
+        "ligue_hablar_no_disp": "Parece ser que {nombre} no está disponible",
+        "ligue_cita_inicio": "Has decidido salir con {nombre}",
+        "ligue_cita_sin_energia": "No tienes ganas de salir hoy",
+        "ligue_cita_sin_dinero": "No te alcanza",
+        "ligue_cita_lugar": "Has decidido ir a {nombre_lugar}",
+        "ligue_cita_like": "Parece ser que {nombre} ha disfrutado la cita",
+        "ligue_cita_excelente": "Parece ser que {nombre} ha disfrutado muchísimo la cita",
+        "ligue_cita_dislike": "Parece ser que {nombre} no ha disfrutado la cita",
+        "ligue_cita_regreso": "Regresas a casa después de salir con tu ligue",
+        "ligue_cita_novia_inicio": "Citas a {nombre} al lugar donde se conocieron",
+        "ligue_menu_ya_novia_h": "Ya eres novio de {nombre}, ya la conoces bien",
+        "ligue_menu_ya_hablaste": "Parece ser que ya has hablado con {nombre}",
+        "ligue_menu_opcion_inv": "Selecciona una opción valida"
+    },
+    "good_ending": [
+        {
+            "tipo": "separador",
+            "texto": "Un Año Despues"
+        },
+        {
+            "tipo": "narracion",
+            "texto": "Estas apunto de celebrar el primer aniversario que estas junto a {nombre}"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "{nombre}",
+            "texto": "¿Ya estas listo amor?"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "Si ¿y tú?"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "{nombre}",
+            "texto": "Aun me falta maquillarme, esperame"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "Okey"
+        },
+        {
+            "tipo": "narracion",
+            "texto": "Decides aprovechar el tiempo para hablar con tus amigos"
+        },
+        {
+            "tipo": "narracion",
+            "texto": "Abres el chat grupal que tienes con tus amigos"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "Bueno Chicos, hoy cumplo un año que estoy con {nombre} y la verdad les quiero agradecer"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "Primero, Gracias Zohan, porque si no me hubieras puesto este absurdo reto"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "No hubiera conocido a una maravillosa persona"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "De nada, para eso estamos Lester"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "Segundo, Gracias Dax, por apoyarme y darme consejos"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "Se que debi hacerte caso antes, pero al final si accedí y lo entendí todo"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Dax",
+            "texto": "No hay nada que agradecer Lester, para eso estamos"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "y por ultimo gracias Hugh, se que no te importo, pero almenos estuviste ahi"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "y por eso te lo agradezco"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Hugh",
+            "texto": "Okey"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Lester",
+            "texto": "Bueno, ya me voy, gracias por todo chicos"
+        },
+        {
+            "tipo": "narracion",
+            "texto": "Te desconectas para salir con {nombre}"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Zohan",
+            "texto": "Bro, realmente hicimos crecer a Lester"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Dax",
+            "texto": "Y si, quien crería que Lester ya tiene novia"
+        },
+        {
+            "tipo": "dialogo",
+            "personaje": "Hugh",
+            "texto": "Yo hubiera apostado mi casa a que moría virgen"
+        }
+    ]
+}
