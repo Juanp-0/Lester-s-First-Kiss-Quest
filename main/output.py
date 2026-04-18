@@ -32,15 +32,12 @@ def set_scene_handler(fn):
 
 # ── Enviar mensajes ─────────────────────────────────────────────────────────
 def msg(texto: str):
-    """Muestra un texto directamente (sin pasar por el JSON)."""
+    #Mostrar Mensaje en el GUI
     if _msg_handler:
         _msg_handler(texto.strip())
 
 def msg_key(clave: str, **params):
-    """Muestra un mensaje usando una clave de dialogos.json['msgs'].
-    Los params reemplazan los {placeholders} del texto del JSON.
-    Ejemplo: output.msg_key('ligue_hablar_like', nombre='Romina')
-    """
+    #Mostrar Mensaje en el GUI desde el JSON
     texto = _get_dialogos()["msgs"].get(clave, f"[{clave}]")
     if params:
         texto = texto.format(**params)
@@ -48,8 +45,6 @@ def msg_key(clave: str, **params):
 
 # ── Disparar escenas ────────────────────────────────────────────────────────
 def escena(clave: str, **params):
-    """Inicia una escena completa del JSON con parámetros opcionales.
-    Ejemplo: output.escena('novia_escena', nombre='Romina')
-    """
+    #Mostrar Escenas en el GUI desde el JSON
     if _scene_handler:
         _scene_handler(clave, params)

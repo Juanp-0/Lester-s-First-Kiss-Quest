@@ -179,13 +179,20 @@ def accion_dormir():
     main.hablar_uso = False
     main.dax_disponible = True
     main.hablar_ligue_uso = False
-    if main.dias == 50 and main.lester.dinero < 2000:
+    if main.primer_beso:
         main.save()
+        iniciar_escena("good_ending", nom_ligue=main.nom_ligue)
+        mostrar(frame_menu)
+    elif main.dias == 50 and main.lester.dinero < 2000:
+        main.save()
+        iniciar_escena("bad_ending")
+        mostrar(frame_menu)
     elif main.dias == 50 and main.lester.dinero >= 2000:
         main.save()
-    elif main.primer_beso == True:
-        main.save()
-    actualizar_gui()
+        iniciar_escena("norm_ending")
+        mostrar(frame_menu)
+    else:
+        actualizar_gui()
 
 def accion_ir_tienda():
     mostrar(frame_tienda)
