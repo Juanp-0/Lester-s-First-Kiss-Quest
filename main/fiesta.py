@@ -30,7 +30,7 @@ def ligue_exito(personaje, chica):
         _main.tener_ligue = True
         _main.ligue = chica
         chica.estado_relacion_xp = 5
-        output.msg_key("fiesta_ligue_efectivo")
+        output.escena("fiesta_ligue_efectivo")
     elif eleccion == "Flechazo":
         _main.tener_ligue = True
         _main.primer_beso = True
@@ -38,4 +38,4 @@ def ligue_exito(personaje, chica):
         chica.estado_relacion_xp = 21
         output.escena("novia_escena", nombre=chica.nombre)
     else:
-        output.msg_key("fiesta_ligue_noEf", nombre=chica.nombre)
+        output.escena("fiesta_ligue_noEf")

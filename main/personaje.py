@@ -56,8 +56,6 @@ class Personaje:
         if self.energia >= 30 and self.dinero >= 20:
             self.energia -= 30
             self.dinero -= 20
-            output.msg_key("salir_inicio")
-            output.msg_key("salir_chicas")
             return True
         elif self.dinero < 20:
             output.msg_key("salir_sin_dinero")
@@ -66,5 +64,4 @@ class Personaje:
             output.msg_key("salir_sin_energia")
             return False
         else:
-            output.msg_key("salir_regreso")
             return False
