@@ -1,7 +1,6 @@
 #Lester's First Kiss Quest
 
 import json
-from time import sleep
 from personaje import Personaje
 from ligue import Ligue
 from item import Item, EnergItem, CarismaItem
@@ -106,58 +105,5 @@ def save():
         json.dump(save_data, save_game)
     output.msg_key("juego_guardado")
 
-
-#Hub
-def game():
-    global dias,hablar_uso,dax_chance,ligue,hablar_ligue_uso,fin_juego, lester, ligue, dax_disponible
-    while True:
-        print(f"Día {dias}")
-        print(f"Stats:\nEnergia: {lester.energia}\nDinero: ${lester.dinero}\nNv. de Carisma: {lester.nv_carisma}")
-        hub = input("\nSelecciona lo que quieres realizar:\n1.- Trabajar (-50 de Energia, +50 de Dinero)\n2.- Hablar con Dax (+1 Nv. de Carsima (Solo una vez por día))\n3.- Salir de Fiesta (-30 de Energia, -20 de Dinero)\n4.- Ir a la Tienda\n5.- Ligue\n6.- Dormir (Pasa al Sig. Día y Restablece Toda la Energia)\n7.- Guardar Partida\n8.- Volver al Menú\n")
-
-        match hub:
-            case "1":
-                lester.trabajar()
-            case "2":
-                hablar_uso, dax_disponible = lester.hablar(dax_chance, hablar_uso, dax_disponible)
-            case "3":
-                if not tener_ligue:
-                    lester.salir(primer_beso)
-                else:
-                    output.msg_key("hub_ya_novia", nombre=ligue.nombre)
-            case "4":
-                sleep(1)
-                output.msg_key("cajero_bienvenida")
-                tienda.tienda_menu(lester)
-            case "5":
-                if not tener_ligue:
-                    output.msg_key("hub_sin_ligue")
-                else:
-                    ligue.ligueMenu(lester)
-            case "6": 
-                dias = lester.dormir(dias)
-                hablar_uso = False
-                dax_disponible = True
-                if dias == 50 and lester.dinero < 2000:
-                    output.msg_key("hub_fin_sin_dinero")
-                    save()
-                    break
-                elif dias == 50 and lester.dinero >= 2000:
-                    output.msg_key("hub_fin_plan_lester")
-                    sleep(1)
-                    save()
-                    break 
-                elif primer_beso == True:
-                    save()
-                    break 
-            case "7":
-                sleep(1)
-                save()
-            case "8":
-                break
-            case _:
-                output.msg_key("hub_opcion_invalida")
-
-#Menu
 if __name__ == "__main__":
     print("Corriendo Juego.")

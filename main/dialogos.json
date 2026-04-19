@@ -655,6 +655,104 @@
             "texto": "(Lo Logré)"
         }
     ],
+    "salir_inicio": [
+        {
+            "tipo": "narracion",
+            "texto": "Te escapas a escondidas de tu casa"
+        },
+        {
+            "tipo": "narracion",
+            "texto": "Tomas el metro para llegar al centro de la ciudad"
+        },
+        {
+            "tipo": "narracion",
+            "texto": "Entras a la primera discoteca que ves"
+        },
+        {
+            "tipo": "narracion",
+            "texto": "La estas pasando excelente"
+        },
+        {
+            "tipo": "narracion",
+            "texto": "Parece que se acercan unas chicas interesadas en ti"
+        },
+        {
+            "tipo": "narracion",
+            "texto": "Es hora de usar tus habilidades de carisma"
+        }
+    ],
+    "fiesta_ligue_efectivo": [
+        {
+            "tipo": "narracion",
+            "texto": "Parece que tus habilidades de carisma, fueron efectivas"
+        },
+        {
+            "tipo": "narracion",
+            "texto": "Regresas a Casa de manera silenciosa, después de una noche de locura"
+        }
+    ],
+    "fiesta_ligue_noEf": [
+        {
+            "tipo": "narracion",
+            "texto": "Parece que tus habilidades de carisma, no fueron efectivas"
+        },
+        {
+            "tipo": "narracion",
+            "texto": "Regresas a Casa de manera silenciosa, después de una noche de locura"
+        }
+    ],
+    "ligue_cita_like": [
+        {
+            "tipo": "narracion",
+            "texto": "Has decidido ir a {nombre_lugar}"
+        },
+        {
+            "tipo": "narracion",
+            "texto": "Parece ser que {nombre} ha disfrutado la cita"
+        },
+        {
+            "tipo": "narracion",
+            "texto": "Regresas a casa después de salir con tu ligue"
+        }
+    ],
+    "ligue_cita_excelente": [
+        {
+            "tipo": "narracion",
+            "texto": "Has decidido ir a {nombre_lugar}"
+        },
+        {
+            "tipo": "narracion",
+            "texto": "Parece ser que {nombre} ha disfrutado muchísimo la cita"
+        },
+        {
+            "tipo": "narracion",
+            "texto": "Regresas a casa después de salir con tu ligue"
+        }
+    ],
+    "ligue_cita_dislike": [
+        {
+            "tipo": "narracion",
+            "texto": "Has decidido ir a {nombre_lugar}"
+        },
+        {
+            "tipo": "narracion",
+            "texto": "Parece ser que {nombre} no ha disfrutado la cita"
+        },
+        {
+            "tipo": "narracion",
+            "texto": "Regresas a casa después de salir con tu ligue"
+        }
+    ],
+    "ligue_cita_novia": [
+        {
+            "tipo": "narracion",
+            "texto": "Has decidido ir a {nombre_lugar}"
+        },
+        {
+            "tipo": "narracion",
+            "texto": "Citas a {nombre} al lugar donde se conocieron"
+        }
+    ],
     "msgs": {
         "no_guardado": "No hay un archivo de guardado existente. Inicia un nuevo juego.",
         "juego_guardado": "Juego guardado exitosamente.",
@@ -664,15 +762,9 @@
         "dax_consejos": "Dax te da unos buenos consejos para aumentar tu carisma",
         "dax_no_disponible": "Parece ser que Dax no está disponible",
         "dax_ya_hablaste": "Parece ser que ya has hablado con Dax",
-        "salir_inicio": "Te escapas a escondidas de tu casa\nTomas el metro para llegar al centro de la ciudad\nEntras a la primera discoteca que ves",
-        "salir_chicas": "La estas pasando excelente\nParece que se acercan unas chicas interesadas en ti\nEs hora de usar tus habilidades de carisma",
         "salir_sin_dinero": "No tienes dinero para Salir de fiesta",
         "salir_sin_energia": "No tienes ganas de Salir de fiesta",
-        "salir_regreso": "Regresas a Casa de manera silenciosa, después de una noche de locura",
         "fiesta_opcion_invalida": "Selecciona una opción válida",
-        "fiesta_ligue_efectivo": "Parece que tus habilidades de carisma, fueron efectivas",
-        "fiesta_ligue_superEf": "Parece que tus habilidades de carisma, fueron superefectivas, tanto que acabas de dar tu primer beso",
-        "fiesta_ligue_noEf": "Parece que tus habilidades de carisma, no fueron efectivas",
         "cajero_bienvenida": "Cajero: Bienvenido ¿En qué te puedo servir?",
         "cajero_despedida": "Cajero: ¡Gracias por comprar! ¡Vuelva pronto!",
         "tienda_compra_ok": "Has comprado {item} y lo has usado",
@@ -682,24 +774,15 @@
         "hub_fin_sin_dinero": "No tienes el dinero suficiente para ejecutar el Plan De Lester, Perdiste el Juego",
         "hub_fin_plan_lester": "No diste tu primer beso, tendrás que ejecutar el Plan De Lester",
         "hub_opcion_invalida": "Selecciona una opción valida",
-        "ligue_datos": "Datos de tu ligue:\nNombre: {nombre}\nNv. de Carisma: {nv_carisma}",
         "ligue_hablar_like": "Parece ser que {nombre} ha disfrutado de la charla",
         "ligue_hablar_excelente": "Parece ser que {nombre} ha disfrutado muchísimo de la charla",
         "ligue_hablar_dislike": "Parece ser que {nombre} no ha disfrutado de la charla",
         "ligue_hablar_trabo": "Hiciste que tu ligue perdiera todo interés en ti",
         "ligue_hablar_no_disp": "Parece ser que {nombre} no está disponible",
-        "ligue_cita_inicio": "Has decidido salir con {nombre}",
         "ligue_cita_sin_energia": "No tienes ganas de salir hoy",
         "ligue_cita_sin_dinero": "No te alcanza",
-        "ligue_cita_lugar": "Has decidido ir a {nombre_lugar}",
-        "ligue_cita_like": "Parece ser que {nombre} ha disfrutado la cita",
-        "ligue_cita_excelente": "Parece ser que {nombre} ha disfrutado muchísimo la cita",
-        "ligue_cita_dislike": "Parece ser que {nombre} no ha disfrutado la cita",
-        "ligue_cita_regreso": "Regresas a casa después de salir con tu ligue",
-        "ligue_cita_novia_inicio": "Citas a {nombre} al lugar donde se conocieron",
         "ligue_menu_ya_novia_h": "Ya eres novio de {nombre}, ya la conoces bien",
-        "ligue_menu_ya_hablaste": "Parece ser que ya has hablado con {nombre}",
-        "ligue_menu_opcion_inv": "Selecciona una opción valida"
+        "ligue_menu_ya_hablaste": "Parece ser que ya has hablado con {nombre}"
     },
     "good_ending": [
         {

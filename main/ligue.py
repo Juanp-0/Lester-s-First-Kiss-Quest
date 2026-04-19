@@ -79,24 +79,23 @@ class Ligue(Personaje):
         elif personaje.dinero < dinero_req:
             output.msg_key("ligue_cita_sin_dinero")
         else:
-            output.msg_key("ligue_cita_lugar", nombre_lugar=nombre_lugar)
             personaje.energia -= energia_req
             personaje.dinero  -= dinero_req
             aprobacion = choice(self.ligue_aprobacion)
             if aprobacion == "Like":
                 self.estado_relacion_xp += 1
                 if self.estado_relacion_xp >= 20:
-                    output.msg_key("ligue_cita_novia_inicio", nombre=self.nombre)
+                    output.escena("ligue_cita_novia", nombre=self.nombre, nombre_lugar=nombre_lugar)
                     novia_escena()
                 else:
-                    output.msg_key("ligue_cita_like", nombre=self.nombre)
+                    output.escena("ligue_cita_like", nombre=self.nombre, nombre_lugar=nombre_lugar)
             elif aprobacion == "Excelente":
                 self.estado_relacion_xp += 3
                 if self.estado_relacion_xp >= 20:
-                    output.msg_key("ligue_cita_novia_inicio", nombre=self.nombre)
+                    output.escena("ligue_cita_novia", nombre=self.nombre, nombre_lugar=nombre_lugar)
                     novia_escena()
                 else:
-                    output.msg_key("ligue_cita_excelente", nombre=self.nombre)
+                    output.escena("ligue_cita_excelente", nombre=self.nombre, nombre_lugar=nombre_lugar)
             else:
                 self.estado_relacion_xp -= 1
                 if self.estado_relacion_xp == 0:
@@ -104,5 +103,4 @@ class Ligue(Personaje):
                     personaje.nv_carisma -= 2
                     output.msg_key("ligue_hablar_trabo")
                 else:
-                    output.msg_key("ligue_cita_dislike", nombre=self.nombre)
-            output.msg_key("ligue_cita_regreso")
+                    output.escena("ligue_cita_dislike", nombre=self.nombre, nombre_lugar=nombre_lugar)

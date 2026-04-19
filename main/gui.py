@@ -314,8 +314,9 @@ def accion_ir_fiesta():
         puede_salir = main.lester.salir(main.primer_beso)
         actualizar_gui()
         if puede_salir:
-            frame_retorno[0] = frame_fiesta
             actualizar_fiesta()
+            frame_retorno[0] = frame_fiesta
+            iniciar_escena("salir_inicio")
 
 
 # ─── Pantalla Ligue ──────────────────────────────────────────────────────────
