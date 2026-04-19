@@ -133,9 +133,15 @@ tk.Button(
     command=lambda: [main.newgame(), iniciar_escena("intro")]
 ).pack(pady=5)
 
+def accion_cargar():
+    if main.load():
+        frame_retorno[0] = frame_hub
+    else:
+        frame_retorno[0] = frame_menu
+
 tk.Button(
     frame_menu, text="Cargar Partida",
-    command=lambda: [main.load(), mostrar(frame_hub)]
+    command=accion_cargar
 ).pack(pady=5)
 
 tk.Button(
